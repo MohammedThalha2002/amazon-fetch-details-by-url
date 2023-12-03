@@ -2,13 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const cheerio = require("cheerio");
 const axios = require("axios");
+var bodyParser = require("body-parser");
 
 const app = express();
 
 const PORT = 3000;
 
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   console.log("GET REQ");
