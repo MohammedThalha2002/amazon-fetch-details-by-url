@@ -43,7 +43,7 @@ const scrape = async (url) => {
             $(desc)
               .text()
               .trim()
-              .replace(/[|&;$%@"<>()+,]/g, "")
+              .replace(/[|\&;$%@"<>()+,]/g, "")
           );
         }
       });
@@ -57,7 +57,7 @@ const scrape = async (url) => {
       data = {
         status: "success",
         url: url,
-        title: title.trim().replace(/[|&;$%@"<>()+,]/g, ""),
+        title: title.trim().replace(/[|\&;$%@"<>()+,]/g, ""),
         features: features,
         imgUrl: imgUrl,
         inStock: inStock == "In stock" ? true : false,
