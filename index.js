@@ -60,7 +60,8 @@ const scrape = async (url) => {
         title: title.trim().replace(/[|\&;$%@"<>()+,]/g, ""),
         features: features,
         imgUrl: imgUrl,
-        inStock: inStock == "In stock" ? true : false,
+        inStock:
+          inStock.includes("Out") || inStock.includes("OUT") ? false : true,
         rating: parseFloat(rating),
         curr_price: curr_price,
       };
