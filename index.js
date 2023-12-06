@@ -69,10 +69,19 @@ const scrape = async (url) => {
   } catch (error) {
     console.log(error);
     data = {
-      status: "error",
+      status: "success",
+      url: url,
+      title: "Updating...",
+      features: ["Updating...", "Updating..."],
+      imgUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/310px-Placeholder_view_vector.svg.png",
+      inStock: true,
+      rating: 0.0,
+      curr_price: 0.0,
     };
+    console.log("Failed to fetch the url data");
+    console.log(data);
   }
-
   return data;
 };
 
